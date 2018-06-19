@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="w4F-kr-639">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="boJ-KQ-Avr">
+            <objects>
+                <navigationController id="w4F-kr-639" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iPm-ar-kth">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="C09-Sh-FKr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ket-5A-aRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1057" y="-137"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UL-wf-b4W">
+                                <rect key="frame" x="129.5" y="84" width="62" height="30"/>
+                                <state key="normal" title="开始编辑"/>
+                                <connections>
+                                    <action selector="onRichTextEditClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hnQ-qH-FUO"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wf1-6Y-fG5">
+                                <rect key="frame" x="0.0" y="134" width="320" height="434"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="n4q-qb-OKk"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="rvW-4T-y4v"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Wf1-6Y-fG5" firstAttribute="top" secondItem="3UL-wf-b4W" secondAttribute="bottom" constant="20" id="KqL-MZ-0pj"/>
+                            <constraint firstItem="3UL-wf-b4W" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="O62-YL-US1"/>
+                            <constraint firstAttribute="trailing" secondItem="Wf1-6Y-fG5" secondAttribute="trailing" id="TQZ-Js-zbs"/>
+                            <constraint firstItem="3UL-wf-b4W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k2S-7S-j0M"/>
+                            <constraint firstItem="Wf1-6Y-fG5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ov4-QB-hYK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wf1-6Y-fG5" secondAttribute="bottom" id="rc9-tt-jY3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="PWg-qL-1FB"/>
+                    <connections>
+                        <outlet property="tableView" destination="Wf1-6Y-fG5" id="6he-M9-Up7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-251.25" y="-137.32394366197184"/>
+        </scene>
+    </scenes>
+</document>
